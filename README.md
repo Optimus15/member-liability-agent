@@ -1,16 +1,15 @@
 # Member Liability Agent - AWS Bedrock Implementation
 
-AWS Bedrock Agent implementation for the Benefits and Member Liability system with Knowledge Base integration, custom Lambda tools, memory management, and API Gateway setup.
+AWS Bedrock Agent implementation for the Benefits and Member Liability, MCP server with tools (Member Eligibility, Member Benefits and Member Liability), memory management, and API Gateway setup.
 
 ## Overview
 
-This project contains Python scripts to deploy and configure an AWS Bedrock Agent that handles member benefits eligibility verification and liability calculations. The agent integrates with AWS services including Knowledge Bases, Lambda functions, Cognito authentication, and API Gateway.
+This project contains Python scripts to deploy and configure an AWS Bedrock Agent that handles member benefits eligibility verification and liability calculations. The agent integrates with AWS services.
 
 ## Features
 
 - ✅ **AWS Bedrock Agent** with Claude 3 Sonnet model
-- ✅ **Knowledge Base Integration** for document retrieval
-- ✅ **Custom Lambda Tools** for eligibility and liability calculations
+- ✅ **Custom Lambda Tools** for eligibility, Benefits and liability calculations
 - ✅ **Agent Memory** with session summary, user preferences, and semantic memory
 - ✅ **Cognito Authentication** for secure API access
 - ✅ **API Gateway** with OAuth integration
@@ -80,7 +79,6 @@ python create_agent.py
 
 This creates:
 - Bedrock Agent with Claude 3 Sonnet
-- Knowledge Base integration
 - Custom Lambda function tools
 - IAM roles and permissions
 
@@ -100,7 +98,6 @@ Tests a 4-step workflow:
 1. Check member eligibility
 2. Verify member has benefits
 3. Calculate liability
-4. Search knowledge base
 
 #### 3. Set Up Agent Memory
 
@@ -241,7 +238,6 @@ python 16_member_benefits_liability_mcpserver.py
 1. **check_member_eligibility** - Verify member eligibility
 2. **get_member_benefits** - Retrieve member benefits
 3. **calculate_member_liability** - Calculate liability amounts
-4. **lookup_order** - Look up order information
 
 ## Configuration Files
 
@@ -361,7 +357,6 @@ AWS services used incur costs:
 - Lambda function executions
 - API Gateway requests
 - Cognito user pool (free tier available)
-- Knowledge Base queries
 
 Estimate costs using AWS Pricing Calculator.
 
