@@ -1,0 +1,11 @@
+{
+  "user_pool_id": "us-east-1_DRYRUN1772321152",
+  "domain_prefix": "member-liability-gateway",
+  "client_id": "DRYRUN1772321152abcdefghijk",
+  "client_secret": "DRYRUN_SECRET_1772321152_abcdefghijklmnopqrstuvwxyz1234567890",
+  "token_endpoint": "https://member-liability-gateway.auth.us-east-1.amazoncognito.com/oauth2/token",
+  "discovery_url": "https://member-liability-gateway.auth.us-east-1.amazoncognito.com/.well-known/openid-configuration",
+  "created_at": "2026-02-28T17:25:52.541145",
+  "region": "us-east-1",
+  "dry_run": true
+}

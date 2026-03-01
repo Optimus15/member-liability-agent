@@ -1,0 +1,14 @@
+{
+  "memory_id": "DRYRUN_MEMORY_20260228124327",
+  "memory_arn": "arn:aws:bedrock:us-east-1:123456789012:agent-memory/DRYRUN_MEMORY_20260228124327",
+  "memory_name": "member_liability_memory",
+  "description": "Stores member and provider interactions, preferences, and history",
+  "agent_id": "MOCK_AGENT_123456",
+  "enabled_strategies": [
+    "SESSION_SUMMARY",
+    "USER_PREFERENCES",
+    "SEMANTIC_MEMORY"
+  ],
+  "created_at": "2026-02-28T12:43:27.886094",
+  "dry_run": true
+}

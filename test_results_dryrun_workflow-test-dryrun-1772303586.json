@@ -1,0 +1,26 @@
+{
+  "test_timestamp": "2026-02-28 12:33:13",
+  "session_id": "workflow-test-dryrun-1772303586",
+  "mode": "DRY_RUN",
+  "parameters": {
+    "member_id": "M123456",
+    "service_date": "2024-03-15",
+    "claim_amount": 150.0
+  },
+  "results": {
+    "eligibility": {
+      "is_eligible": true,
+      "success": true
+    },
+    "benefits": {
+      "has_benefits": true,
+      "success": true
+    },
+    "liability": {
+      "success": true
+    },
+    "knowledge_base": {
+      "success": true
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "resource_name": "OrderLookup",
+  "resource_path": "order-lookup",
+  "resource_id": "res1772322241",
+  "http_method": "POST",
+  "lambda_function": "OrderLookupFunction",
+  "lambda_arn": "arn:aws:lambda:us-east-1:123456789012:function:OrderLookupFunction",
+  "api_id": "dryrun1772321989",
+  "deployment_id": "deploy1772322241",
+  "stage": "prod",
+  "created_at": "2026-02-28T17:44:01.715639",
+  "dry_run": true
+}

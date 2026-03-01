@@ -1,0 +1,11 @@
+# AWS SDK for Python
+boto3>=1.34.0
+
+# JSON handling (built-in, but listed for clarity)
+# json
+
+# Date/time handling (built-in)
+# datetime
+
+# For Lambda deployment (optional)
+# aws-lambda-powertools>=2.0.0

@@ -1,0 +1,6 @@
+{
+  "role_arn": "arn:aws:iam::123456789012:role/GatewayLambdaInvokeRole",
+  "role_name": "GatewayLambdaInvokeRole",
+  "created_at": "2026-02-28T17:39:49.799467",
+  "dry_run": true
+}

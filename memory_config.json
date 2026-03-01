@@ -1,0 +1,13 @@
+{
+  "memory_id": "MOCK_MEMORY_123456",
+  "memory_arn": "arn:aws:bedrock:us-east-1:123456789012:agent-memory/MOCK_MEMORY_123456",
+  "memory_name": "member_liability_memory",
+  "description": "Stores member and provider interactions, preferences, and history",
+  "agent_id": "MOCK_AGENT_123456",
+  "enabled_strategies": [
+    "SESSION_SUMMARY",
+    "USER_PREFERENCES",
+    "SEMANTIC_MEMORY"
+  ],
+  "created_at": "2026-02-28T12:43:27.886094"
+}
