@@ -4,7 +4,19 @@ AWS Bedrock Agent implementation for the Benefits and Member Liability, MCP serv
 
 ## Overview
 
-This project contains Python scripts to deploy and configure an AWS Bedrock Agent that handles member benefits eligibility verification and liability calculations. The agent integrates with AWS services.
+### Purpose
+
+The AWS Bedrock Member Liability Agent is an intelligent conversational AI system designed to automate member benefits & eligibility verification and liability calculations for healthcare insurance systems. The agent leverages AWS Bedrock's foundation models (Claude 3 Sonnet) combined with MCP server with tools (Member Eligibility, Member Benefits and Member Liability), Knowledge Base integration, and memory capabilities to provide context aware responses. This project contains Python scripts to deploy and configure an AWS Bedrock Agent that handles member liability calculations. The agent integrates with cloud-native stack optimized for AI-powered healthcare applications with enterprise-grade security, scalability, and maintainability.
+
+### Design Goals
+
+1. **Conversational AI system**: Provide member eligibility, benefits and liability calculations using AI
+2. **Contextual Memory**: Remember user preferences and conversation history
+3. **Knowledge Integration**: Access policy documents and benefit information via Knowledge Base
+4. **Secure Access**: Implement OAuth-based authentication for API access
+5. **Scalability**: Support high-volume concurrent requests
+6. **Auditability**: Maintain complete audit trails for compliance
+7. **Extensibility**: Easy addition of new tools and capabilities
 
 ## Features
 
