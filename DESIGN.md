@@ -39,7 +39,6 @@ The AWS Bedrock Member Liability Agent is an intelligent conversational AI syste
 ### Key Features
 
 - AWS Bedrock Agent with Claude 3 Sonnet foundation model
-- Knowledge Base integration for document retrieval
 - Custom Lambda function tools for business logic
 - Agent memory with three strategies (session, preferences, semantic)
 - Cognito-based OAuth authentication
@@ -107,7 +106,7 @@ The AWS Bedrock Member Liability Agent is an intelligent conversational AI syste
 │  Knowledge     │      │  Action Groups    │
 │  Base          │      │  (Lambda Tools)   │
 │                │      │                   │
-│  - Policy Docs │      │  ┌─────────────┐  │
+│                │      │  ┌─────────────┐  │
 │  - Benefits    │      │  │ Eligibility │  │
 │  - Procedures  │      │  │   Check     │  │
 │  - FAQs        │      │  └─────────────┘  │
@@ -116,7 +115,7 @@ The AWS Bedrock Member Liability Agent is an intelligent conversational AI syste
 │                │      │  │ Calculate   │  │
 │                │      │  └─────────────┘  │
 │                │      │  ┌─────────────┐  │
-│                │      │  │   Order     │  │
+│                │      │  │   Benefit   │  │
 │                │      │  │   Lookup    │  │
 │                │      │  └─────────────┘  │
 └────────────────┘      └───────────────────┘
@@ -165,7 +164,7 @@ benefits eligibility and calculate their liability amounts. You have access to:
 1. A knowledge base with policy documents and benefit information
 2. Tools to check member eligibility
 3. Tools to calculate member liability
-4. Tools to look up order information
+
 
 Always be helpful, accurate, and professional. When calculating liability or checking 
 eligibility, use the appropriate tools. When answering general questions about benefits, 
@@ -294,24 +293,6 @@ search the knowledge base first.
 }
 ```
 
-#### 3.3 Order Lookup Tool
-
-**Lambda Function**: Integrated with existing order system
-
-**API Schema**:
-```json
-{
-  "name": "lookup_order",
-  "description": "Look up order information by order ID",
-  "parameters": {
-    "order_id": {
-      "type": "string",
-      "description": "The unique order identifier",
-      "required": true
-    }
-  }
-}
-```
 
 
 ### 4. Agent Memory
@@ -439,10 +420,6 @@ search the knowledge base first.
     - Request: { "member_id": "string", "service_code": "string", ... }
     - Response: Liability calculation
 
-/order-lookup
-  POST - Look up order information
-    - Request: { "order_id": "string" }
-    - Response: Order details
 ```
 
 **Integration Type**: AWS_PROXY (Lambda proxy integration)
@@ -481,9 +458,7 @@ search the knowledge base first.
    - Input: member_id, service_code, total_charges, service_date
    - Output: Liability calculation
 
-4. **lookup_order**
-   - Input: order_id
-   - Output: Order details
+
 
 **Configuration**:
 ```json
@@ -732,30 +707,6 @@ search the knowledge base first.
 }
 ```
 
-#### 4. Order Lookup
-
-**Endpoint**: `POST /order-lookup`
-
-**Description**: Look up order information.
-
-**Request**:
-```json
-{
-  "order_id": "ORD-12345"
-}
-```
-
-**Response**:
-```json
-{
-  "order_id": "ORD-12345",
-  "status": "COMPLETED",
-  "member_id": "M001",
-  "order_date": "2024-03-10",
-  "items": [...]
-}
-```
-
 ### Authentication Headers
 
 All API requests must include:
@@ -848,7 +799,6 @@ X-RateLimit-Reset: 1710504600
       "Resource": [
         "arn:aws:lambda:*:*:function:check_eligibility",
         "arn:aws:lambda:*:*:function:calculate_liability",
-        "arn:aws:lambda:*:*:function:order_lookup"
       ]
     },
     {
@@ -1117,7 +1067,7 @@ Region: us-east-1 (configurable)
 ├── AWS Lambda
 │   ├── Function: check_eligibility
 │   ├── Function: calculate_liability
-│   └── Function: order_lookup
+│   └── Function: benefit_lookup
 │
 ├── Amazon Cognito
 │   ├── User Pool: member-liability-user-pool
@@ -1452,7 +1402,7 @@ python 15_test_full_agent.py
 **Lambda Memory**:
 - Eligibility function: 256 MB
 - Liability function: 512 MB
-- Order lookup: 256 MB
+- Benefit lookup: 256 MB
 - Adjust based on actual usage
 
 ### 5. Caching Strategy
